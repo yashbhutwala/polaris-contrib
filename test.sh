@@ -1,5 +1,7 @@
 #!/bin/bash
 
+set -x
+
 TLSOUT_CRT=tls.crt
 TLSOUT_KEY=tls.key
 ### Create a secret... 
