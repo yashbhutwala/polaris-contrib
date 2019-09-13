@@ -1,5 +1,7 @@
-namePrefix: staging-
-namespace: staging
-name: staging
+kind: Kustomization
+namespace: myblackduck
+namePrefix: myblackduck
+commonLabels:
+  app: blackduck-hub-kustomized
 resources:
 - ./blackduck_base.yaml
