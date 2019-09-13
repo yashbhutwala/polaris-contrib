@@ -2,6 +2,13 @@
 
 We will be expanding it in the future to have use cases, scripts, hacks, deployment stories, and kustomizations.
 
+# DISCLAIMER
+
+These examples are not a part of any official synopsys/blackduck release, and aren't supported as production
+deployment tooling by blackduck/polaris engineering teams.  Please only use these if you know what you are doing, and consult your support contacts before using them  to install or modify a production instance of blackduck/polaris.  These examples are mostly intended for learning.
+
+That said, these should be very useful for helping you learn how to install blackduck, or polaris, in a production setting!
+
 # Philosophy
 
 We've created this repository because customers have a broad range of deployment models and tool integrations which don't always fit neatly into the standard SDLC pipeline for an enterprise grade software delivery model.
