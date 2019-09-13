@@ -1,23 +1,32 @@
 #!/bin/bash
 
+source `dirname ${BASH_SOURCE}`/args.sh "${@}"
+
 set -x
+
+### Create namespace
+kubectl create ns "$_arg_namespace"
 
 TLSOUT_CRT=tls.crt
 TLSOUT_KEY=tls.key
-### Create a secret... 
-openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out $TLSOUT_CRT -keyout $TLSOUT_KEY
+### Generate the TLS certificate and key
+openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out "$TLSOUT_CRT" -keyout "$TLSOUT_KEY"
+### Create the TLS certificate secret
+kubectl create secret tls -n "$_arg_namespace" swip-ingress-tls --cert="$TLSOUT_CRT" --key="$TLSOUT_KEY"
 
-### Create generic secrets for coverity.
-kubectl create secret generic -n onprem coverity-license --from-literal=license=coverity
+### Create generic secrets for coverity... 
+kubectl create secret generic -n "$_arg_namespace" coverity-license --from-literal=license=coverity
 
 ### Get pull secrets 
-echo "for this to work, you need polaris-keyfile.json, get it from senthil/jeremy"
-kubectl create secret docker-registry gcr-json-key --docker-server=https://gcr.io --docker-username="_json_key" --docker-password="$(cat polaris-keyfile.json)" --docker-email="cloudnative-ro@polaris-dev-233821.iam.gserviceaccount.com" -n onprem
+echo "for this to work, you need to get polaris-keyfile.json from senthil/jeremy"
+### Create pull secrets 
+kubectl create secret docker-registry "$_arg_pull_secret" --docker-server=https://gcr.io --docker-username="_json_key" --docker-password="$(cat polaris-keyfile.json)" --docker-email="cloudnative-ro@polaris-dev-233821.iam.gserviceaccount.com" -n "$_arg_namespace"
 
-kubectl create secret generic -n default tools-store-sync
-kubectl create secret tls swip-ingress-tls --cert=$TLSOUT_CRT --key=$TLSOUT_KEY
+### Create tools store sync secret... TODO: Need to be removed once the tools sync job is fixed
+echo "for this to work, you need to get tools secret file from senthil/jeremy"
+kubectl create -f tools-store-sync.yaml -n "$_arg_namespace"
 
-/usr/local/bin/synopsysctl create polaris native default --version test --pull-secret gcr-json-key --postgres-password admin --postgres-username admin --environment-dns onprem.dev.polaris.synopsys.com --environment-name onprem  --smtp-host mailhost.internal.synopsys.com --smtp-port 25 --smtp-username root --smtp-password root| kubectl apply -f - -n default --validate=false
+./synopsysctl create polaris native "$_arg_namespace" --environment-dns "$_arg_environment_dns" --environment-name "$_arg_environment_name" --eventstore-size "$_arg_eventstore_size" --format "$_arg_format" --postgres-username "$_arg_postgres_username" --postgres-password "$_arg_postgres_password" --postgres-size "$_arg_postgres_size" --pull-secret "$_arg_pull_secret" --smtp-host "$_arg_smtp_host" --smtp-port $_arg_smtp_port --smtp-username "$_arg_smtp_username" --smtp-password "$_arg_smtp_password" --storage-class "$_arg_storage_class" --target "$_arg_target" --uploadserver-size "$_arg_uploadserver_size" --version "$_arg_version" | kubectl apply -f - -n "$_arg_namespace" --validate=false
 
-kubectl get secret | grep -q auth
-kubectl get pods | grep -q polaris
+kubectl get secret -n "$_arg_namespace" | grep -q auth
+kubectl get pods -n "$_arg_namespace" | grep -q polaris
