@@ -3,5 +3,6 @@ namespace: myblackduck
 namePrefix: myblackduck
 commonLabels:
   app: blackduck-hub-kustomized
+namespace: myhub
 resources:
 - ./blackduck_base.yaml
