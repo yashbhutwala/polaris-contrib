@@ -1,6 +1,11 @@
+This is not officially supported installation path, but rather, an example for advanced kubernetes users of blackduck.
+
 # Raw yaml installation example
 
 You can use the raw yamls in this repository to install a hub.
+
+If you want to update this example with a different base yaml froma  more recent release, you can
+grab the latest YAMLs from https://github.com/blackducksoftware/releases/.
 
 This is meant as an example for advanced users who want to operationalized blackduck.
 
@@ -30,5 +35,6 @@ Note that `YmxhY2tkdWNrCg==/g` is the base64 encoded value of the string 'blackd
 use as the password for this toy installation.  Please use a more sophisticated password in the real world :).
 
 ```
+PASSWORD=`cat blackduck | base64`
 kubectl kustomize ./ | sed 's/${NAME}/generic/g' | sed 's/${ADMIN_DB_PASSWORD}/YmxhY2tkdWNrCg==/g' | sed 's/${POSTGRES_DB_PASSWORD}/YmxhY2tkdWNrCg==/g' | sed 's/${USER_DB_PASSWORD}/YmxhY2tkdWNrCg==/g'
 ```
