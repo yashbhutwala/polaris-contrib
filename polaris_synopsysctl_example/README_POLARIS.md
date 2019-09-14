@@ -1,3 +1,8 @@
+Reading time: 5 minutes.
+
+This is not officially supported installation path, but rather, an example for advanced kubernetes users of blackduck
+Who want to get up and running with blackduck using raw
+yAMl flies (kubernetes).
 
 # On prem raw installation
 
