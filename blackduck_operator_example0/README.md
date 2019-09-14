@@ -1,4 +1,5 @@
-Reading time: 5 minutes.
+Reading time: 5 minutes.  This is not officially supported installation path, but rather, an example for advanced kubernetes users of blackduck
+Who want to get up and running with blackduck using the blackduck operator (kubernetes).
 
 # Synopsysctl 
 
@@ -32,5 +33,4 @@ kubectl get pods -n jay
 ```
 
 And you will see your running blackduck instance!
-
 
