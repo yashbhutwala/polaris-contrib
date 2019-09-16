@@ -9,8 +9,13 @@ deployment tooling by blackduck/polaris engineering teams.  Please only use thes
 
 That said, these should be very useful for helping you learn how to install blackduck, or polaris, in a production setting!
 
+# Contributions
+
+If you are an interested customer, SE, or anyone else, we'll happily review and incorporate your work into this repository as long as it passes some basic sniff testing and represents a valid product use case.
+
 -------------------------------------------
 
+Ok, so, whats in this repo ? 
 
 # Contents 
 
@@ -19,7 +24,8 @@ This repo has **Scripts/Tutorials** alongside a **Wiki** .
 ## Scripts and Tutorials
 
 The **top level directory** has several self explanatory tutorials, scripts, and other one off tools with examples for
-customer success, proof of concepts, generic installation walkthroughs.  **PULL REQUESTS WELCOME !!!** IF you are a customer or SE, we'll happily review and incorporate your work into this repository as long as it passes some basic sniff testing and represents a valid product use case.
+customer success, proof of concepts, generic installation walkthroughs.  **PULL REQUESTS WELCOME !!!**.
+
 
 ## Docs
 
