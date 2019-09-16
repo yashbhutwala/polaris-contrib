@@ -1,19 +1,6 @@
 # This is a home for SE and Customer support scripts for blackduck and polaris related deployment artifacts.
 
-We will be expanding it in the future to have use cases, scripts, hacks, deployment stories, and kustomizations.
-
-# DISCLAIMER
-
-These examples are not a part of any official synopsys/blackduck release, and aren't supported as production
-deployment tooling by blackduck/polaris engineering teams.  Please only use these if you know what you are doing, and consult your support contacts before using them  to install or modify a production instance of blackduck/polaris.  These examples are mostly intended for learning.
-
-That said, these should be very useful for helping you learn how to install blackduck, or polaris, in a production setting!
-
-# CONTRIBUTIONS
-
-If you are an interested customer, SE, or anyone else, we'll happily review and incorporate your work into this repository as long as it passes some basic sniff testing and represents a valid product use case.
-
-This repo has **Scripts/Tutorials** alongside a **Wiki** . 
+We will be expanding it in the future to have use cases, scripts, hacks, deployment stories, and kustomizations.  This repo has **Scripts/Tutorials** alongside a **Wiki** . 
 
 # SCRIPTS AND TUTORIALS
 
@@ -26,8 +13,20 @@ customer success, proof of concepts, generic installation walkthroughs.  **PULL 
 We also have **a wiki** with several articles for learning about polaris and blackduck deployments in kubernetes environments: 
 https://github.com/blackducksoftware/polaris-contrib/wiki
 
+...Warning... bikeshedding below...
 
 -------------------------------------------
+
+# DISCLAIMER
+
+These examples are not a part of any official synopsys/blackduck release, and aren't supported as production
+deployment tooling by blackduck/polaris engineering teams.  Please only use these if you know what you are doing, and consult your support contacts before using them  to install or modify a production instance of blackduck/polaris.  These examples are mostly intended for learning.
+
+That said, these should be very useful for helping you learn how to install blackduck, or polaris, in a production setting!
+
+# CONTRIBUTIONS
+
+If you are an interested customer, SE, or anyone else, we'll happily review and incorporate your work into this repository as long as it passes some basic sniff testing and represents a valid product use case.
 
 # PHILOSOPHY
 
