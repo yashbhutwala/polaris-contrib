@@ -18,12 +18,12 @@ This repo has **Scripts/Tutorials** alongside a **Wiki** .
 
 ## Scripts and Tutorials
 
-The top level directory has several self explanatory tutorials, scripts, and other one off tools with examples for
+The **top level directory** has several self explanatory tutorials, scripts, and other one off tools with examples for
 customer success, proof of concepts, generic installation walkthroughs
 
 ## Docs
 
-We also have a wiki with several articles for learning about polaris and blackduck deployments in kubernetes environments: 
+We also have **a wiki** with several articles for learning about polaris and blackduck deployments in kubernetes environments: 
 https://github.com/blackducksoftware/polaris-contrib/wiki
 
 
