@@ -10,7 +10,7 @@ kubectl create ns "$_arg_namespace"
 TLSOUT_CRT=tls.crt
 TLSOUT_KEY=tls.key
 ### Generate the TLS certificate and key
-# openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out "$TLSOUT_CRT" -keyout "$TLSOUT_KEY"
+openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out "$TLSOUT_CRT" -keyout "$TLSOUT_KEY"
 ### Create the TLS certificate secret
 kubectl create secret tls -n "$_arg_namespace" swip-ingress-tls --cert="$TLSOUT_CRT" --key="$TLSOUT_KEY"
 
