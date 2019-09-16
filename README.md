@@ -13,7 +13,6 @@ That said, these should be very useful for helping you learn how to install blac
 
 If you are an interested customer, SE, or anyone else, we'll happily review and incorporate your work into this repository as long as it passes some basic sniff testing and represents a valid product use case.
 
--------------------------------------------
 This repo has **Scripts/Tutorials** alongside a **Wiki** . 
 
 # SCRIPTS AND TUTORIALS
