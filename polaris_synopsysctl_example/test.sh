@@ -2,6 +2,9 @@
 
 source `dirname ${BASH_SOURCE}`/args.sh "${@}"
 
+echo "Example invocation: ./test.sh -n onprem --version test --pull-secret gcr-json-key --postgres-password admin --postgres-username admin --environment-dns onprem.dev.polaris.synopsys.com --environment-name onprem  --smtp-host smtp.sendgrid.net --smtp-port 2525 --smtp-username apikey --smtp-password "SG.xxxx" --native "
+
+
 set -x
 
 ### Create namespace
