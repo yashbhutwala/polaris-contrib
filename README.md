@@ -9,20 +9,20 @@ deployment tooling by blackduck/polaris engineering teams.  Please only use thes
 
 That said, these should be very useful for helping you learn how to install blackduck, or polaris, in a production setting!
 
-# Contributions
+# CONTRIBUTIONS
 
 If you are an interested customer, SE, or anyone else, we'll happily review and incorporate your work into this repository as long as it passes some basic sniff testing and represents a valid product use case.
 
 -------------------------------------------
 This repo has **Scripts/Tutorials** alongside a **Wiki** . 
 
-# Scripts and Tutorials
+# SCRIPTS AND TUTORIALS
 
 The **top level directory** has several self explanatory tutorials, scripts, and other one off tools with examples for
 customer success, proof of concepts, generic installation walkthroughs.  **PULL REQUESTS WELCOME !!!**.
 
 
-# Docs
+# DOCUMENTATION WIKI
 
 We also have **a wiki** with several articles for learning about polaris and blackduck deployments in kubernetes environments: 
 https://github.com/blackducksoftware/polaris-contrib/wiki
@@ -30,7 +30,7 @@ https://github.com/blackducksoftware/polaris-contrib/wiki
 
 -------------------------------------------
 
-# Philosophy
+# PHILOSOPHY
 
 We've created this repository because customers have a broad range of deployment models and tool integrations which don't always fit neatly into the standard SDLC pipeline for an enterprise grade software delivery model.
 
