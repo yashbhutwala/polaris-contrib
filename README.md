@@ -23,6 +23,9 @@ customer success, proof of concepts, generic installation walkthroughs
 We also have a wiki with several articles for learning about polaris and blackduck deployments in kubernetes environments: 
 https://github.com/blackducksoftware/polaris-contrib/wiki
 
+
+-------------------------------------------
+
 # Philosophy
 
 We've created this repository because customers have a broad range of deployment models and tool integrations which don't always fit neatly into the standard SDLC pipeline for an enterprise grade software delivery model.
