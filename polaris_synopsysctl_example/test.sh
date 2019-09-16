@@ -10,12 +10,13 @@ kubectl create ns "$_arg_namespace"
 TLSOUT_CRT=tls.crt
 TLSOUT_KEY=tls.key
 ### Generate the TLS certificate and key
-openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out "$TLSOUT_CRT" -keyout "$TLSOUT_KEY"
+# openssl req -new -newkey rsa:4096 -x509 -sha256 -days 365 -nodes -out "$TLSOUT_CRT" -keyout "$TLSOUT_KEY"
 ### Create the TLS certificate secret
 kubectl create secret tls -n "$_arg_namespace" swip-ingress-tls --cert="$TLSOUT_CRT" --key="$TLSOUT_KEY"
 
 ### Create generic secrets for coverity... 
-kubectl create secret generic -n "$_arg_namespace" coverity-license --from-literal=license=coverity
+echo "for this to work, you need to get coverity-license from senthil/jeremy"
+kubectl create -n "$_arg_namespace" -f coverity-license.yaml
 
 ### Get pull secrets 
 echo "for this to work, you need to get polaris-keyfile.json from senthil/jeremy"
@@ -28,5 +29,3 @@ kubectl create -f tools-store-sync.yaml -n "$_arg_namespace"
 
 ./synopsysctl create polaris native "$_arg_namespace" --environment-dns "$_arg_environment_dns" --environment-name "$_arg_environment_name" --eventstore-size "$_arg_eventstore_size" --format "$_arg_format" --postgres-username "$_arg_postgres_username" --postgres-password "$_arg_postgres_password" --postgres-size "$_arg_postgres_size" --pull-secret "$_arg_pull_secret" --smtp-host "$_arg_smtp_host" --smtp-port $_arg_smtp_port --smtp-username "$_arg_smtp_username" --smtp-password "$_arg_smtp_password" --storage-class "$_arg_storage_class" --target "$_arg_target" --uploadserver-size "$_arg_uploadserver_size" --version "$_arg_version" | kubectl apply -f - -n "$_arg_namespace" --validate=false
 
-kubectl get secret -n "$_arg_namespace" | grep -q auth
-kubectl get pods -n "$_arg_namespace" | grep -q polaris
