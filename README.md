@@ -1,6 +1,6 @@
-# This is a home for SE and Customer support scripts for blackduck and polaris related deployment artifacts.
+# WELCOME TO POLARIS-CONTRIB !
 
-We will be expanding it in the future to have use cases, scripts, hacks, deployment stories, and kustomizations.  This repo has **Scripts/Tutorials** alongside a **Wiki** . 
+This is a contribution repo for non-critical-path engineering and customer success related artifacts for the polaris product ecosystem.  It has **Scripts/Tutorials** alongside a **Wiki**, which can help you get started **developing, installing, customizing, or extending the functionality of Blackduck and/or Polaris in Cloud Native environments**.
 
 # SCRIPTS AND TUTORIALS
 
