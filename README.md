@@ -9,6 +9,9 @@ deployment tooling by blackduck/polaris engineering teams.  Please only use thes
 
 That said, these should be very useful for helping you learn how to install blackduck, or polaris, in a production setting!
 
+-------------------------------------------
+
+
 # Contents 
 
 This repo has **Scripts/Tutorials** alongside a **Wiki** . 
