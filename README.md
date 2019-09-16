@@ -9,6 +9,19 @@ deployment tooling by blackduck/polaris engineering teams.  Please only use thes
 
 That said, these should be very useful for helping you learn how to install blackduck, or polaris, in a production setting!
 
+# Contents 
+
+This repo has **Scripts/Tutorials** alongside a **Wiki** . 
+
+## Scripts and Tutorials
+
+The top level directory has several self explanatory tutorials, scripts, and other one off tools with examples for
+customer success, proof of concepts, generic installation walkthroughs
+
+## Docs
+
+- https://github.com/blackducksoftware/polaris-contrib/wiki/Polaris-container-states:-When-(not)-to-worry.
+
 # Philosophy
 
 We've created this repository because customers have a broad range of deployment models and tool integrations which don't always fit neatly into the standard SDLC pipeline for an enterprise grade software delivery model.
