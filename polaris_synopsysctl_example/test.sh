@@ -29,5 +29,14 @@ echo "for this to work, you need to get tools secret file from senthil/jeremy...
 read x
 kubectl create -f tools-store-sync.yaml -n "$_arg_namespace"
 
-./synopsysctl create polaris native "$_arg_namespace" --environment-dns "$_arg_environment_dns" --environment-name "$_arg_environment_name" --eventstore-size "$_arg_eventstore_size" --format "$_arg_format" --postgres-username "$_arg_postgres_username" --postgres-password "$_arg_postgres_password" --postgres-size "$_arg_postgres_size" --pull-secret "$_arg_pull_secret" --smtp-host "$_arg_smtp_host" --smtp-port $_arg_smtp_port --smtp-username "$_arg_smtp_username" --smtp-password "$_arg_smtp_password" --storage-class "$_arg_storage_class" --target "$_arg_target" --uploadserver-size "$_arg_uploadserver_size" --version "$_arg_version" | kubectl apply -f - -n "$_arg_namespace" --validate=false
+
+./synopsysctl create polaris native "$_arg_namespace" --environment-dns "$_arg_environment_dns" --environment-name "$_arg_environment_name" --eventstore-size "$_arg_eventstore_size" --format "$_arg_format" --postgres-username "$_arg_postgres_username" --postgres-password "$_arg_postgres_password" --postgres-size "$_arg_postgres_size" --pull-secret "$_arg_pull_secret" --smtp-host "$_arg_smtp_host" --smtp-port $_arg_smtp_port --smtp-username "$_arg_smtp_username" --smtp-password "$_arg_smtp_password" --storage-class "$_arg_storage_class" --target "$_arg_target" --uploadserver-size "$_arg_uploadserver_size" --version "$_arg_version" > /tmp/deploy-polaris.yml ; 
+
+echo "Created polaris deployment at /tmp/deploy-polaris.yml.... applying in 1 second..."
+
+sleep 1
+
+cat /tmp/deploy-polaris.yml | kubectl apply -f - -n "$_arg_namespace" --validate=false
+
+
 
